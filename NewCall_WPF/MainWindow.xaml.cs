@@ -33,24 +33,41 @@ namespace NewCall_WPF
         {
             var login = new Login(){
 
-                identifiant = identifiant.Text,
-                password = password.Text,
+                identifiant = txtUser.Text,
+                password = txtPass.Password,
 
             };
             var reponse = await client.PostAsJsonAsync("http://localhost:5164/api/Admins/login", login);
 
             if (reponse.IsSuccessStatusCode)
             {
-                LoginMessage.Content = "Connexion réussie!";
+               
                 DashboardWindow dashboard = new DashboardWindow();
                 dashboard.Show();
                 this.Close();
             }
             else
             {
-                LoginMessage.Content = "Échec de la connexion.";
+               
             }
         }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e) { }
 
     }
 }

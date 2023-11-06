@@ -7,11 +7,23 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AbsencesControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CalendarControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\DashboardWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AbsencesControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CalendarControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

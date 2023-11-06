@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewCall_WPF.View"
         mc:Ignorable="d"
-        Title="DashboardWindow" Height="450" Width="800">
+        Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Bienvenue sur le tableau de bord!"/>
+        <!-- Define the Grid with two columns -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <!-- This * means take as much space as available -->
+            <ColumnDefinition Width="2*" />
+            <!-- This means take twice as much space as the first column -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Place the first grid in the first column -->
+        <Grid Background="blue" Grid.Column="0" Margin="0,0,123,0">
+            <Button HorizontalAlignment="Left" Click="Button_Click" VerticalAlignment="Top" Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Bouton 1" Margin="5,0,0,0" />
+                    <Image Source="gamer.png" Margin="10,0,0,0"  Width="16" Height="16" />
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" Click="CallBtn" VerticalAlignment="Center" Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Bouton 2" Margin="5,0,0,0" />
+                    <Image Source="gamer.png" Margin="10,0,0,0"  Width="16" Height="16" />
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Bouton 3" Margin="5,0,0,0" />
+                <Image Source="gamer.png" Margin="10,0,0,0"  Width="16" Height="16" />
+                </StackPanel>
+            </Button>
+        </Grid>
+        
+        <!-- Place the second grid in the second column -->
+        <Grid Name="ContentArea" Background="red" Grid.ColumnSpan="2" Margin="133,0,0,0">
+            <ContentControl Name="contentControl" />
+        </Grid>
     </Grid>
 </Window>

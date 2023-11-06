@@ -22,6 +22,19 @@ namespace NewCall_WPF.View
         public DashboardWindow()
         {
             InitializeComponent();
+          
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AbsencesControl myContent = new AbsencesControl();
+            contentControl.Content = myContent;
+        }
+
+        private void CallBtn(object sender, RoutedEventArgs e)
+        {
+            CalendarControl myContent = new CalendarControl();
+            contentControl.Content = myContent;
         }
     }
 }

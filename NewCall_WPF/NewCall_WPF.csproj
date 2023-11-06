@@ -8,6 +8,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Login\key-icon.png" />
+    <None Remove="Assets\Login\user-icon.png" />
+    <None Remove="Assets\logo.jpg" />
+    <None Remove="Capture(1).png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\Login\key-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Login\user-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HandyControls" Version="3.4.5" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
   </ItemGroup>
 
