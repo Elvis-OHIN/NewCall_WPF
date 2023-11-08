@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "net7.0-windows7.0": {
+      "FontAwesome.Sharp/6.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "HandyControls/3.4.5": {
         "type": "package",
         "compile": {
@@ -1582,6 +1594,21 @@
     }
   },
   "libraries": {
+    "FontAwesome.Sharp/6.3.0": {
+      "sha512": "3/Fb0N04yYK8An07oox5ISlUyNgsnWildHfoP69uqTEOsemQemRyciphMkXZOcdBupjUD+lVsRE3FqG41/dzPA==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.3.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
+      ]
+    },
     "HandyControls/3.4.5": {
       "sha512": "hzia27R7D4zBXjisASbkWTEGgaKkgDS+iB1IAB7pjvx7JVa/FFVs2X1DgAQrSuuk9hdu9JMFUzop06uqmP9zqw==",
       "type": "package",
@@ -5487,6 +5514,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
+      "FontAwesome.Sharp >= 6.3.0",
       "HandyControls >= 3.4.5",
       "Microsoft.AspNet.WebApi.Client >= 5.2.9"
     ]
@@ -5497,11 +5525,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elvis\\Source\\Repos\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
+      "projectUniqueName": "C:\\Users\\Elvis\\source\\repos\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
       "projectName": "NewCall_WPF",
-      "projectPath": "C:\\Users\\Elvis\\Source\\Repos\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
+      "projectPath": "C:\\Users\\Elvis\\source\\repos\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
       "packagesPath": "C:\\Users\\Elvis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elvis\\Source\\Repos\\NewCall_WPF\\NewCall_WPF\\obj\\",
+      "outputPath": "C:\\Users\\Elvis\\source\\repos\\NewCall_WPF\\NewCall_WPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Elvis\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5530,6 +5558,10 @@
       "net7.0-windows7.0": {
         "targetAlias": "net7.0-windows",
         "dependencies": {
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[6.3.0, )"
+          },
           "HandyControls": {
             "target": "Package",
             "version": "[3.4.5, )"

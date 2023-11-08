@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "neXpUREa/ByUwX7zrKrX9ftj4+LeDYKvYnS3WY1O4vlTfpfFwAbY5/dIzJMQMHg53kWBdZYyGXMmk7AvAEGpHA==",
+  "dgSpecHash": "1n25gV+0BzU3WxrmbRQtZcdKOhwb3rnLY7W5SV/GQs5wMWqdrFoxLgT+/4KsF70v87YgtCd7T+H3odCaJStf5g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Elvis\\source\\repos\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Elvis\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
     "C:\\Users\\Elvis\\.nuget\\packages\\handycontrols\\3.4.5\\handycontrols.3.4.5.nupkg.sha512",
     "C:\\Users\\Elvis\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\Elvis\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

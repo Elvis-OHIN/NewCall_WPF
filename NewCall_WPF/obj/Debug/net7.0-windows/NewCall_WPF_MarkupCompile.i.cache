@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\App.xaml
-4-107152352
+9471168815
 2552850296
-11-1582240834
-2021691001059
-AbsencesControl.xaml;CalendarControl.xaml;MainWindow.xaml;View\DashboardWindow.xaml;
+18-53480860
+212503147360
+ButtonStyles.xaml;CalendarControl.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AbsencesView.xaml;View\DashboardWindow.xaml;View\HomeView.xaml;View\StudentView.xaml;
 
-False
+True
 

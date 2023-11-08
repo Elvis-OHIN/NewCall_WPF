@@ -26,7 +26,6 @@ D:\niho\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\ref\NewCall_WPF.dll
 D:\niho\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\DashboardWindow.g.cs
 D:\niho\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\DashboardWindow.baml
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF.csproj.AssemblyReference.cache
-C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\AbsencesControl.g.cs
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\DashboardWindow.g.cs
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\App.g.cs
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF_MarkupCompile.cache
@@ -45,7 +44,6 @@ C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\bin\Debug\net7.0-windows\New
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\bin\Debug\net7.0-windows\Newtonsoft.Json.Bson.dll
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\App.baml
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\DashboardWindow.baml
-C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\AbsencesControl.baml
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF.g.resources
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF.AssemblyInfoInputs.cache
@@ -61,3 +59,14 @@ C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\Mai
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF_Content.g.cs
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\bin\Debug\net7.0-windows\Assets\Login\key-icon.png
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\bin\Debug\net7.0-windows\Assets\Login\user-icon.png
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\bin\Debug\net7.0-windows\FontAwesome.Sharp.dll
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\ButtonStyles.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\Styles\ButtonStyles.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\Styles\UIColors.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\AbsencesView.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\StudentView.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\AbsencesView.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\StudentView.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\HomeView.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\HomeView.baml

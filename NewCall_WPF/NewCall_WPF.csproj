@@ -12,6 +12,14 @@
     <None Remove="Assets\Login\user-icon.png" />
     <None Remove="Assets\logo.jpg" />
     <None Remove="Capture(1).png" />
+    <None Remove="DALL·E 2023-11-08 22.11.29 - Design a logo for %27NewCall%27 that includes a stylized book icon, symbolizing knowledge and information. The primary color of the logo should be #FFA500.png" />
+    <None Remove="login.png" />
+    <None Remove="login_window.png" />
+    <None Remove="logo.jpg" />
+    <None Remove="logo.png" />
+    <None Remove="logo_Image Enhancer.png" />
+    <None Remove="logo_newCall.png" />
+    <None Remove="NewCall.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,8 +32,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="HandyControls" Version="3.4.5" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="DALL·E 2023-11-08 22.11.29 - Design a logo for 'NewCall' that includes a stylized book icon, symbolizing knowledge and information. The primary color of the logo should be #FFA500.png" />
+    <Resource Include="login.png" />
+    <Resource Include="login_window.png" />
+    <Resource Include="logo.jpg" />
+    <Resource Include="logo.png" />
+    <Resource Include="logo_Image Enhancer.png" />
+    <Resource Include="logo_newCall.png" />
+    <Resource Include="NewCall.png" />
   </ItemGroup>
 
 </Project>
