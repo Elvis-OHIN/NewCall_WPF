@@ -48,4 +48,10 @@
     <Resource Include="NewCall.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="App.xaml.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>

@@ -17,7 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 
-namespace NewCall_WPF
+namespace NewCall_WPF.View
 {
     /// <summary>
     /// Logique d'interaction pour AbsencesControl.xaml

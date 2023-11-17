@@ -7,10 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="CustomControls\BindablePasswordBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AbsencesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="CalendarControl.xaml.cs">
+    <Compile Update="View\CalendarControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\DashboardWindow.xaml.cs">
@@ -19,18 +22,24 @@
     <Compile Update="View\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\StudentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="CustomControls\BindablePasswordBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AbsencesView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ButtonStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="CalendarControl.xaml">
+    <Page Update="View\CalendarControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -46,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\StudentView.xaml">

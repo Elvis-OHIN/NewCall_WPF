@@ -52,8 +52,6 @@ C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\New
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF.csproj.CopyComplete
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF.genruntimeconfig.cache
 C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\ref\NewCall_WPF.dll
-C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\CalendarControl.g.cs
-C:\Users\Elvis\Source\Repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\CalendarControl.baml
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\MainWindow.g.cs
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\MainWindow.baml
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\NewCall_WPF_Content.g.cs
@@ -70,3 +68,9 @@ C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\Vie
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\HomeView.g.cs
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\HomeView.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\LoginWindow.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\LoginWindow.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\CustomControls\BindablePasswordBox.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\CustomControls\BindablePasswordBox.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CalendarControl.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CalendarControl.baml

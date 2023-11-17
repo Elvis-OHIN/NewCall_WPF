@@ -88,5 +88,7 @@ namespace NewCall_WPF.ViewModels
             Caption = "Dashboard";
             Icon = IconChar.Home;
         }
+
+
     }
 }

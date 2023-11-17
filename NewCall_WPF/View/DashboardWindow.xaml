@@ -20,7 +20,7 @@
         </DataTemplate>
         
         <DataTemplate DataType="{x:Type viewModel:StudentViewModel}">
-            <local:StudentView/>
+            <local:AbsencesView/>
         </DataTemplate>
 
     </Window.Resources>

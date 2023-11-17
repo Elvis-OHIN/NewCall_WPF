@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\App.xaml
-9471168815
+111576202473
 2552850296
-18-53480860
+24937842573
 212503147360
-ButtonStyles.xaml;CalendarControl.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AbsencesView.xaml;View\DashboardWindow.xaml;View\HomeView.xaml;View\StudentView.xaml;
+ButtonStyles.xaml;CustomControls\BindablePasswordBox.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AbsencesView.xaml;View\CalendarControl.xaml;View\DashboardWindow.xaml;View\HomeView.xaml;View\LoginWindow.xaml;View\StudentView.xaml;
 
-True
+False
 
