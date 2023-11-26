@@ -1515,6 +1515,25 @@
           }
         }
       },
+      "System.Windows.Interactivity.WPF/2.0.20525": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Expression.Interactions.dll": {
+            "related": ".xml"
+          },
+          "lib/net40/System.Windows.Interactivity.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Expression.Interactions.dll": {
+            "related": ".xml"
+          },
+          "lib/net40/System.Windows.Interactivity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Xml.ReaderWriter/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -5330,6 +5349,21 @@
         "system.threading.timer.nuspec"
       ]
     },
+    "System.Windows.Interactivity.WPF/2.0.20525": {
+      "sha512": "0r+Le4E7hCm4zToUvBzjSUyTcuU3rFeoPa7JyTdWIzR/F7wH6+O/pWkjHIG40hIA0z1wvRdZayvoizA4wcK1dg==",
+      "type": "package",
+      "path": "system.windows.interactivity.wpf/2.0.20525",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Microsoft.Expression.Interactions.dll",
+        "lib/net40/Microsoft.Expression.Interactions.xml",
+        "lib/net40/System.Windows.Interactivity.dll",
+        "lib/net40/System.Windows.Interactivity.xml",
+        "system.windows.interactivity.wpf.2.0.20525.nupkg.sha512",
+        "system.windows.interactivity.wpf.nuspec"
+      ]
+    },
     "System.Xml.ReaderWriter/4.3.0": {
       "sha512": "GrprA+Z0RUXaR4N7/eW71j1rgMnEnEVlgii49GZyAjTH7uliMnrOU3HNFBr6fEDBCJCIdlVNq9hHbaDR621XBA==",
       "type": "package",
@@ -5516,7 +5550,8 @@
     "net7.0-windows7.0": [
       "FontAwesome.Sharp >= 6.3.0",
       "HandyControls >= 3.4.5",
-      "Microsoft.AspNet.WebApi.Client >= 5.2.9"
+      "Microsoft.AspNet.WebApi.Client >= 5.2.9",
+      "System.Windows.Interactivity.WPF >= 2.0.20525"
     ]
   },
   "packageFolders": {
@@ -5569,6 +5604,10 @@
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.9, )"
+          },
+          "System.Windows.Interactivity.WPF": {
+            "target": "Package",
+            "version": "[2.0.20525, )"
           }
         },
         "imports": [
@@ -5593,5 +5632,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'System.Windows.Interactivity.WPF 2.0.20525' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net7.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "System.Windows.Interactivity.WPF",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    }
+  ]
 }

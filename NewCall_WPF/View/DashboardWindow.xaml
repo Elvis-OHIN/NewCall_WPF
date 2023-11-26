@@ -16,13 +16,17 @@
     <Window.Resources>
 
         <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-            <local:HomeView/>
+            <local:CalendarView/>
         </DataTemplate>
         
         <DataTemplate DataType="{x:Type viewModel:StudentViewModel}">
             <local:AbsencesView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:CallViewModel}">
+            <local:CallView/>
+        </DataTemplate>
+        
     </Window.Resources>
 
     <Grid>
@@ -74,7 +78,7 @@
                                  Command="{Binding ShowStudentViewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="UserGroup" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Customers" Style="{StaticResource menuButtonText}"/>
+                        <TextBlock Text="Etudiants" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
             </StackPanel>

@@ -13,7 +13,10 @@
     <Compile Update="View\AbsencesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\CalendarControl.xaml.cs">
+    <Compile Update="View\CalendarView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\CallView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\DashboardWindow.xaml.cs">
@@ -33,13 +36,13 @@
     <Page Update="CustomControls\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\CalendarStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AbsencesView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ButtonStyles.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\CalendarControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -49,6 +52,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\UIColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CalendarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CallView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\DashboardWindow.xaml">

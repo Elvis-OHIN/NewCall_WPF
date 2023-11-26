@@ -72,5 +72,10 @@ C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\Vie
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\LoginWindow.baml
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\CustomControls\BindablePasswordBox.g.cs
 C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\CustomControls\BindablePasswordBox.baml
-C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CalendarControl.g.cs
-C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CalendarControl.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CalendarView.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CalendarView.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\Styles\CalendarStyles.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CallView.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CallView.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\bin\Debug\net7.0-windows\Microsoft.Expression.Interactions.dll
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\bin\Debug\net7.0-windows\System.Windows.Interactivity.dll

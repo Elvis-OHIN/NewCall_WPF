@@ -36,7 +36,7 @@ namespace NewCall_WPF.View
 
         private void CallBtn(object sender, RoutedEventArgs e)
         {
-            CalendarControl myContent = new CalendarControl();
+            CalendarView myContent = new CalendarView();
             
         }
 

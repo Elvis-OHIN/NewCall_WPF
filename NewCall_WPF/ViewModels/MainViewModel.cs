@@ -60,6 +60,7 @@ namespace NewCall_WPF.ViewModels
         }
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowStudentViewCommand { get; }
+        public ICommand ShowCallViewCommand { get; }
 
         public MainViewModel()
         {
@@ -68,6 +69,8 @@ namespace NewCall_WPF.ViewModels
             //Initialize commands
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowStudentViewCommand = new ViewModelCommand(ExecuteShowStudentViewCommand);
+            ShowCallViewCommand = new ViewModelCommand(ExecuteShowCallViewCommand);
+
 
             //Default view
             ExecuteShowHomeViewCommand(null);
@@ -88,7 +91,12 @@ namespace NewCall_WPF.ViewModels
             Caption = "Dashboard";
             Icon = IconChar.Home;
         }
-
+        private void ExecuteShowCallViewCommand(object obj)
+        {
+            CurrentChildView = new CallViewModel();
+            Caption = "Test";
+            Icon = IconChar.Home;
+        }
 
     }
 }

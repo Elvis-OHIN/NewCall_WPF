@@ -16,6 +16,7 @@ namespace NewCall_WPF.Models
 
         public string statut { get; set; }
 
+        public bool IsSelect { get; set; }
         public ICollection<Absences>? Absences { get; set; }
         public Students(int id, string firstname, string lastname, string statut)
         {
