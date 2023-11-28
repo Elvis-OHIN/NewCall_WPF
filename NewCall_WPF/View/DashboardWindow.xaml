@@ -73,14 +73,25 @@
                         <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
+                
+                <RadioButton Style="{StaticResource menuButton}"
+                    Tag="{StaticResource color2}"
+                    Command="{Binding ShowCalendarViewCommand}">     
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="UserGroup" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Liste des absences" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                
                 <RadioButton Style="{StaticResource menuButton}"
                     Tag="{StaticResource color1}"
                     Command="{Binding ShowCalendarViewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Newspaper" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Feuille d'appel" Style="{StaticResource menuButtonText}"/>
+                        <TextBlock Text="Faire d'appel" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
+                
                 <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color2}"
                                  Command="{Binding ShowStudentViewCommand}">
@@ -89,6 +100,7 @@
                         <TextBlock Text="Etudiants" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
+                
             </StackPanel>
         </Border>
         

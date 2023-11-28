@@ -1,6 +1,7 @@
 using FontAwesome.Sharp;
 using HandyControl.Tools.Command;
 using NewCall_WPF.Interfaces;
+using NewCall_WPF.Models;
 using NewCall_WPF.Models.Calendar;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,8 @@ namespace NewCall_WPF.ViewModels
         }
         public ICommand ShowCallViewCommand { get; }
 
+        public ICommand ShowAbsenceViewCommand { get; private set; }
+
         private static CalendarViewModel _instance = new CalendarViewModel();
         public static CalendarViewModel Instance => _instance;
         public CalendarViewModel()
@@ -60,7 +63,7 @@ namespace NewCall_WPF.ViewModels
             CurrentMonth = new MonthInfo();
             CurrentMonth.GenerateMonth(DateTime.Now.Year, DateTime.Now.Month);
             ShowCallViewCommand = new ViewModelCommand(ExecuteShowCallViewCommand);
-            
+            ShowAbsenceViewCommand = new ViewModelCommand(ExecuteShowAbsenceViewCommand);
         }
 
         private void ExecuteShowCallViewCommand(object obj)
@@ -68,6 +71,13 @@ namespace NewCall_WPF.ViewModels
             var param = obj;
             CallViewModel.Instance.Day = (int)Convert.ToInt64(param); 
             MainViewModel.Instance.CurrentChildView = new CallViewModel();
+        }
+
+        private void ExecuteShowAbsenceViewCommand(object obj)
+        {
+            var param = obj;
+            StudentViewModel.Instance.Student = (List<Students>)param;
+            MainViewModel.Instance.CurrentChildView = new StudentViewModel();
         }
     }
 }

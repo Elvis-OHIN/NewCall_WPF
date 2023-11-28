@@ -1,4 +1,7 @@
 using HandyControl.Controls;
+using HandyControl.Tools;
+using NewCall_WPF.Models;
+using NewCall_WPF.Repositories;
 using NewCall_WPF.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -14,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace NewCall_WPF.View
 {
@@ -49,6 +53,7 @@ namespace NewCall_WPF.View
 
         private void DataGrid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+
             var point = e.GetPosition(CalendarData);
             var hitTestResult = VisualTreeHelper.HitTest(CalendarData, point);
             if (hitTestResult != null)
@@ -63,9 +68,19 @@ namespace NewCall_WPF.View
                         var viewModel = DataContext as CalendarViewModel;
                         if (viewModel != null)
                         {
-                            viewModel.ShowCallViewCommand.Execute(cellValue); // Exécutez la commande avec la ligne sélectionnée comme paramètre
-                        }
+                            AbsenceRepository absenceRepository = new AbsenceRepository();
+                            DateTime date = new DateTime(CalendarViewModel.Instance.CurrentMonth.Year, CalendarViewModel.Instance.CurrentMonth.Month, cellValue.ConvertToInt());
+                            var absences = absenceRepository.GetAbsenceByDate(date);
 
+                            if(absences.Result.id != null)
+                            {
+                                MainViewModel.Instance.CurrentChildView = new CalendarViewModel();
+                                viewModel.ShowAbsenceViewCommand.Execute(absences);
+                            }
+
+                            MainViewModel.Instance.CurrentChildView = new CalendarViewModel();
+                            viewModel.ShowCallViewCommand.Execute(cellValue);
+                        }
                     }
                 }
             }

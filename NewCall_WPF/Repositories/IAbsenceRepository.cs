@@ -11,5 +11,6 @@ namespace NewCall_WPF.Repositories
     public interface IAbsenceRepository
     {
         Task<bool> AddAbsence(Absences absence);
+        Task <List<Absences>> GetAbsenceByDate(DateTime date);
     }
 }

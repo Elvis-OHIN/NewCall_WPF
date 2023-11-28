@@ -34,7 +34,7 @@ namespace NewCall_WPF.View
         }
         private async void LoadStudents()
         {
-            HttpResponseMessage response = await client.GetAsync("http://localhost:5164/Students/Index");
+            HttpResponseMessage response = await client.GetAsync("http://localhost:5164/api/Students/Index");
 
             var jsonString = await response.Content.ReadAsStringAsync();
             var students = JsonConvert.DeserializeObject<List<Students>>(jsonString);
@@ -49,7 +49,15 @@ namespace NewCall_WPF.View
             .Select(p => p.id)
                 .ToList();
 
-           AbsenceRepository absenceRepository = new AbsenceRepository();
+            AbsenceRepository absenceRepository = new AbsenceRepository();
+            foreach (var item in personnesSelectionnees)
+            {
+                Absences absences = new Absences();
+                absences.startDate = date;
+                absences.studentId = item;
+                absenceRepository.AddAbsence(absences);
+            }
+            MainViewModel.Instance.CurrentChildView = new CalendarViewModel();
         }
     }
 }

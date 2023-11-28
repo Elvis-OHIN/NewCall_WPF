@@ -13,9 +13,6 @@ namespace NewCall_WPF.Models
 
         public int studentId { get; set; }
 
-
-        public required Students student { get; set; }
-
         public DateTime startDate { get; set; }
 
         public DateTime? endDate { get; set; }

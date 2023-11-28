@@ -45,10 +45,7 @@
            
         </DataGrid>
 
-        <ContentControl Content="{Binding CurrentChildView}"
-                    Grid.Row="2"
-                    Margin="25"/>
-
+   
     </Grid>
    
     
