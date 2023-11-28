@@ -1,4 +1,5 @@
-﻿using System;
+using NewCall_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -25,7 +26,7 @@ namespace NewCall_WPF.View
         public DashboardWindow()
         {
             InitializeComponent();
-          
+            DataContext = ViewModelLocator.MainViewModelInstance;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

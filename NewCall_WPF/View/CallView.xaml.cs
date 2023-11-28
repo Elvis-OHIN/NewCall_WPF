@@ -1,8 +1,11 @@
-﻿using NewCall_WPF.Models;
+using NewCall_WPF.Models;
+using NewCall_WPF.Repositories;
+using NewCall_WPF.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +34,7 @@ namespace NewCall_WPF.View
         }
         private async void LoadStudents()
         {
-            HttpResponseMessage response = await client.GetAsync("http://localhost:5164/api/Students/Index");
+            HttpResponseMessage response = await client.GetAsync("http://localhost:5164/Students/Index");
 
             var jsonString = await response.Content.ReadAsStringAsync();
             var students = JsonConvert.DeserializeObject<List<Students>>(jsonString);
@@ -39,12 +42,14 @@ namespace NewCall_WPF.View
         }
         private void btnEnregistrerSelection_Click(object sender, RoutedEventArgs e)
         {
+            DateTime date = new DateTime(CalendarViewModel.Instance.CurrentMonth.Year, CalendarViewModel.Instance.CurrentMonth.Month,CallViewModel.Instance.Day);
             var personnesSelectionnees = StudentList.Items
                 .OfType<Students>()
                 .Where(p => p.IsSelect)
-                .Select(p => p.id)
+            .Select(p => p.id)
                 .ToList();
 
+           AbsenceRepository absenceRepository = new AbsenceRepository();
         }
     }
 }

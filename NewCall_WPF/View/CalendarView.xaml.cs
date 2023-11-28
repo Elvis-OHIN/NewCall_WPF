@@ -1,4 +1,5 @@
-﻿using NewCall_WPF.ViewModels;
+using HandyControl.Controls;
+using NewCall_WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,13 +60,17 @@ namespace NewCall_WPF.View
                     if (content != null)
                     {
                         string cellValue = content.Text;
-                        DataContext = new MainViewModel();
-                        var viewModel = DataContext as MainViewModel;
-                        
+                        var viewModel = DataContext as CalendarViewModel;
+                        if (viewModel != null)
+                        {
+                            viewModel.ShowCallViewCommand.Execute(cellValue); // Exécutez la commande avec la ligne sélectionnée comme paramètre
+                        }
+
                     }
                 }
             }
         }
+      
 
         private T FindParent<T>(DependencyObject child) where T : DependencyObject
         {

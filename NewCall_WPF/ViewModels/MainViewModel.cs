@@ -1,4 +1,4 @@
-﻿using FontAwesome.Sharp;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace NewCall_WPF.ViewModels
         private string _caption;
         private IconChar _icon;
 
-
+    
 
         public ViewModelBase CurrentChildView
         {
@@ -60,24 +60,22 @@ namespace NewCall_WPF.ViewModels
         }
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowStudentViewCommand { get; }
-        public ICommand ShowCallViewCommand { get; }
+        public ICommand ShowCalendarViewCommand { get; }
 
+        private static MainViewModel _instance = new MainViewModel();
+        public static MainViewModel Instance => _instance;
         public MainViewModel()
         {
-
-
             //Initialize commands
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowStudentViewCommand = new ViewModelCommand(ExecuteShowStudentViewCommand);
-            ShowCallViewCommand = new ViewModelCommand(ExecuteShowCallViewCommand);
-
-
+            ShowCalendarViewCommand = new ViewModelCommand(ExecuteShowCalendarViewCommand);
+          
             //Default view
             ExecuteShowHomeViewCommand(null);
 
-
         }
-
+      
         private void ExecuteShowStudentViewCommand(object obj)
         {
             CurrentChildView = new StudentViewModel();
@@ -91,11 +89,11 @@ namespace NewCall_WPF.ViewModels
             Caption = "Dashboard";
             Icon = IconChar.Home;
         }
-        private void ExecuteShowCallViewCommand(object obj)
+        private void ExecuteShowCalendarViewCommand(object obj)
         {
-            CurrentChildView = new CallViewModel();
-            Caption = "Test";
-            Icon = IconChar.Home;
+            CurrentChildView = new CalendarViewModel();
+            Caption = "Feuille d'appel";
+            Icon = IconChar.Newspaper;
         }
 
     }

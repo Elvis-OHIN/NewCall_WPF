@@ -9,10 +9,6 @@
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" 
         WindowState="Maximized" d:DesignHeight="514.223" d:DesignWidth="798.614"
         WindowStyle="None">
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
-
     <Window.Resources>
 
         <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -23,10 +19,14 @@
             <local:AbsencesView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:CalendarViewModel}">
+            <local:CalendarView/>
+        </DataTemplate>
+
         <DataTemplate DataType="{x:Type viewModel:CallViewModel}">
             <local:CallView/>
         </DataTemplate>
-        
+
     </Window.Resources>
 
     <Grid>
@@ -71,6 +71,14 @@
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Dashboard" Style="{StaticResource menuButtonText}"/>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{StaticResource menuButton}"
+                    Tag="{StaticResource color1}"
+                    Command="{Binding ShowCalendarViewCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Newspaper" Style="{StaticResource menuButtonIcon}"/>
+                        <TextBlock Text="Feuille d'appel" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
                 <RadioButton Style="{StaticResource menuButton}"

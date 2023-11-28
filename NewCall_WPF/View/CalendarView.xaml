@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="NewCall_WPF.View.CalendarView"
+<UserControl x:Class="NewCall_WPF.View.CalendarView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -32,7 +32,9 @@
             <Button Content="Mois Suivant" Click="OnNextMonthClicked"/>
         </StackPanel>
 
-        <DataGrid IsReadOnly="True" ItemsSource="{Binding CurrentMonth.Weeks}" Name="CalendarData"  Grid.Row="1" AutoGenerateColumns="False">
+        <DataGrid IsReadOnly="True" ItemsSource="{Binding CurrentMonth.Weeks}" Name="CalendarData"
+                  PreviewMouseLeftButtonDown="DataGrid_PreviewMouseLeftButtonDown"
+                  Grid.Row="1" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Lun" Binding="{Binding Monday.DayNumber}" />
                 <DataGridTextColumn Header="Mar" Binding="{Binding Tuesday.DayNumber}" />
@@ -40,11 +42,7 @@
                 <DataGridTextColumn Header="Jeu" Binding="{Binding Thursday.DayNumber}" />
                 <DataGridTextColumn Header="Ven" Binding="{Binding Friday.DayNumber}" />
             </DataGrid.Columns>
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
-                    <i:InvokeCommandAction Command="{Binding ShowCallViewCommand}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
+           
         </DataGrid>
 
         <ContentControl Content="{Binding CurrentChildView}"

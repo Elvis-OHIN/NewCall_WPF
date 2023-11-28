@@ -1,4 +1,6 @@
-﻿using FontAwesome.Sharp;
+using FontAwesome.Sharp;
+using HandyControl.Tools.Command;
+using NewCall_WPF.Interfaces;
 using NewCall_WPF.Models.Calendar;
 using System;
 using System.Collections.Generic;
@@ -6,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,8 +17,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace NewCall_WPF.ViewModels
 {
-    public class CalendarViewModel : INotifyPropertyChanged
+    public class CalendarViewModel : ViewModelBase
     {
+        public ICommand OpenPageCommand { get; private set; }
+
+        private readonly INavigationService _navigationService;
+
         private MonthInfo _currentMonth;
 
         public MonthInfo CurrentMonth
@@ -46,22 +53,21 @@ namespace NewCall_WPF.ViewModels
         }
         public ICommand ShowCallViewCommand { get; }
 
+        private static CalendarViewModel _instance = new CalendarViewModel();
+        public static CalendarViewModel Instance => _instance;
         public CalendarViewModel()
         {
             CurrentMonth = new MonthInfo();
             CurrentMonth.GenerateMonth(DateTime.Now.Year, DateTime.Now.Month);
             ShowCallViewCommand = new ViewModelCommand(ExecuteShowCallViewCommand);
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            
         }
 
         private void ExecuteShowCallViewCommand(object obj)
         {
-            CurrentChildView = new CallViewModel();
+            var param = obj;
+            CallViewModel.Instance.Day = (int)Convert.ToInt64(param); 
+            MainViewModel.Instance.CurrentChildView = new CallViewModel();
         }
     }
 }

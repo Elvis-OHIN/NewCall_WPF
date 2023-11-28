@@ -1,4 +1,5 @@
-﻿using NewCall_WPF.Models;
+using NewCall_WPF.Models;
+using NewCall_WPF.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace NewCall_WPF.View
         public AbsencesView()
         {
             InitializeComponent();
+            DataContext = new StudentViewModel();
             LoadStudents();
         }
 
@@ -37,7 +39,7 @@ namespace NewCall_WPF.View
             
             var jsonString = await response.Content.ReadAsStringAsync();
             var students = JsonConvert.DeserializeObject<List<Students>>(jsonString);
-            lvUsers.ItemsSource = students;
+            //lvUsers.ItemsSource = students;
         }
     }
 }
