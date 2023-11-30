@@ -5555,19 +5555,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elvis\\.nuget\\packages\\": {}
+    "C:\\Users\\elvis\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elvis\\source\\repos\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
+      "projectUniqueName": "D:\\niho\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
       "projectName": "NewCall_WPF",
-      "projectPath": "C:\\Users\\Elvis\\source\\repos\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
-      "packagesPath": "C:\\Users\\Elvis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elvis\\source\\repos\\NewCall_WPF\\NewCall_WPF\\obj\\",
+      "projectPath": "D:\\niho\\NewCall_WPF\\NewCall_WPF\\NewCall_WPF.csproj",
+      "packagesPath": "C:\\Users\\elvis\\.nuget\\packages\\",
+      "outputPath": "D:\\niho\\NewCall_WPF\\NewCall_WPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Elvis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\elvis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5629,7 +5629,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -5638,7 +5638,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Le package 'System.Windows.Interactivity.WPF 2.0.20525' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net7.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "message": "Package 'System.Windows.Interactivity.WPF 2.0.20525' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "System.Windows.Interactivity.WPF",
       "targetGraphs": [
         "net7.0-windows7.0"

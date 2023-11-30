@@ -20,9 +20,10 @@ namespace NewCall_WPF.ViewModels
 {
     public class CalendarViewModel : ViewModelBase
     {
-        public ICommand OpenPageCommand { get; private set; }
 
-        private readonly INavigationService _navigationService;
+
+        private static CalendarViewModel _instance = new CalendarViewModel();
+        public static CalendarViewModel Instance => _instance;
 
         private MonthInfo _currentMonth;
 
@@ -52,12 +53,25 @@ namespace NewCall_WPF.ViewModels
                 OnPropertyChanged(nameof(CurrentChildView));
             }
         }
+
+        private bool _viewAbsences;
+        public bool ViewAbsences
+        {
+            get
+            {
+                return _viewAbsences;
+            }
+
+            set
+            {
+                _viewAbsences = value;
+                OnPropertyChanged(nameof(ViewAbsences));
+            }
+        }
         public ICommand ShowCallViewCommand { get; }
 
         public ICommand ShowAbsenceViewCommand { get; private set; }
 
-        private static CalendarViewModel _instance = new CalendarViewModel();
-        public static CalendarViewModel Instance => _instance;
         public CalendarViewModel()
         {
             CurrentMonth = new MonthInfo();

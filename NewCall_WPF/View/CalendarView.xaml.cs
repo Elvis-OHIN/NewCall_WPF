@@ -5,8 +5,10 @@ using NewCall_WPF.Repositories;
 using NewCall_WPF.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -51,7 +53,7 @@ namespace NewCall_WPF.View
             Month.Content = MonthName.NameMonth;
         }
 
-        private void DataGrid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private async void DataGrid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
             var point = e.GetPosition(CalendarData);
@@ -69,17 +71,27 @@ namespace NewCall_WPF.View
                         if (viewModel != null)
                         {
                             AbsenceRepository absenceRepository = new AbsenceRepository();
-                            DateTime date = new DateTime(CalendarViewModel.Instance.CurrentMonth.Year, CalendarViewModel.Instance.CurrentMonth.Month, cellValue.ConvertToInt());
-                            var absences = absenceRepository.GetAbsenceByDate(date);
 
-                            if(absences.Result.id != null)
+                            DateTime date = new DateTime(CalendarViewModel.Instance.CurrentMonth.Year, CalendarViewModel.Instance.CurrentMonth.Month, cellValue.ConvertToInt());
+
+                            if (CalendarViewModel.Instance.ViewAbsences == true)
+                            {
+                                var absences = await absenceRepository.GetAbsenceByDate(date);
+
+                                StudentViewModel.Instance.Student = absences;
+
+                                if (absences.Count > 0)
+                                {
+                                    MainViewModel.Instance.CurrentChildView = new CalendarViewModel();
+                                    viewModel.ShowAbsenceViewCommand.Execute(absences);
+                                }
+
+                            }
+                            else
                             {
                                 MainViewModel.Instance.CurrentChildView = new CalendarViewModel();
-                                viewModel.ShowAbsenceViewCommand.Execute(absences);
+                                viewModel.ShowCallViewCommand.Execute(cellValue);
                             }
-
-                            MainViewModel.Instance.CurrentChildView = new CalendarViewModel();
-                            viewModel.ShowCallViewCommand.Execute(cellValue);
                         }
                     }
                 }
@@ -96,5 +108,7 @@ namespace NewCall_WPF.View
             if (parent != null) return parent;
             else return FindParent<T>(parentDepObj);
         }
+
+      
     }
 }

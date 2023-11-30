@@ -43,7 +43,6 @@
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
                     <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"/>
-                    <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
             <StackPanel>
@@ -54,7 +53,7 @@
                                 Margin="15,25,0,40">
 
                     <Image Source="/logo_newCall.png" Height="30"/>
-                    <TextBlock Text="RJ CODE"
+                    <TextBlock Text="NewCall"
                                    Foreground="{StaticResource titleColor2}"
                                    FontSize="20"
                                    FontFamily="Montserrat"
@@ -65,7 +64,7 @@
 
                 <!--Menu Buttons-->
                 <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color1}"
+                                 Tag="{StaticResource color11}"
                                  IsChecked="True"
                                  Command="{Binding ShowHomeViewCommand}">
                     <StackPanel Orientation="Horizontal">
@@ -75,16 +74,16 @@
                 </RadioButton>
                 
                 <RadioButton Style="{StaticResource menuButton}"
-                    Tag="{StaticResource color2}"
-                    Command="{Binding ShowCalendarViewCommand}">     
+                    Tag="{StaticResource color11}"
+                    Command="{Binding ShowCalendarAbsencesViewCommand}">     
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="UserGroup" Style="{StaticResource menuButtonIcon}"/>
+                        <fa:IconImage Icon="UsersSlash" Style="{StaticResource menuButtonIcon}"/>
                         <TextBlock Text="Liste des absences" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
                 
                 <RadioButton Style="{StaticResource menuButton}"
-                    Tag="{StaticResource color1}"
+                    Tag="{StaticResource color11}"
                     Command="{Binding ShowCalendarViewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Newspaper" Style="{StaticResource menuButtonIcon}"/>
@@ -93,7 +92,7 @@
                 </RadioButton>
                 
                 <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color2}"
+                                 Tag="{StaticResource color11}"
                                  Command="{Binding ShowStudentViewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="UserGroup" Style="{StaticResource menuButtonIcon}"/>
@@ -107,8 +106,8 @@
         <Border Grid.Column="1">
             <Border.Background>
                 <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                    <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
-                    <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
+                    <GradientStop Color="{StaticResource primaryBackColor3}" Offset="0"/>
+                    <GradientStop Color="{StaticResource primaryBackColor4}" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -163,11 +162,11 @@
                         <fa:IconImage Icon="{Binding Icon}"
                                           Height="20"
                                           Width="20"
-                                          Foreground="{StaticResource titleColor2}"
+                                          Foreground="{StaticResource titleColor1}"
                                           Margin="35,0,10,0"/>
 
                         <TextBlock Text="{Binding Caption}"
-                                       Foreground="{StaticResource titleColor2}"
+                                       Foreground="{StaticResource titleColor1}"
                                        FontSize="16"
                                        FontFamily="Montserrat"
                                        FontWeight="Medium"

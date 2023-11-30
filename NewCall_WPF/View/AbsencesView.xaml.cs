@@ -29,17 +29,12 @@ namespace NewCall_WPF.View
         public AbsencesView()
         {
             InitializeComponent();
-            DataContext = new StudentViewModel();
             LoadStudents();
         }
 
         private async void LoadStudents()
         {
-            HttpResponseMessage response = await client.GetAsync("http://localhost:5164/api/Students/Index");
-            
-            var jsonString = await response.Content.ReadAsStringAsync();
-            var students = JsonConvert.DeserializeObject<List<Students>>(jsonString);
-            //lvUsers.ItemsSource = students;
+            StudentList.ItemsSource = StudentViewModel.Instance.Student;
         }
     }
 }

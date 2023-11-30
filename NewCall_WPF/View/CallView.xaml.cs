@@ -46,7 +46,7 @@ namespace NewCall_WPF.View
             var personnesSelectionnees = StudentList.Items
                 .OfType<Students>()
                 .Where(p => p.IsSelect)
-            .Select(p => p.id)
+                .Select(p => p.id)
                 .ToList();
 
             AbsenceRepository absenceRepository = new AbsenceRepository();

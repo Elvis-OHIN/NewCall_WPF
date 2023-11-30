@@ -13,8 +13,6 @@ namespace NewCall_WPF.ViewModels
     {
         public ICommand ChangeViewCommand { get; private set; }
 
-        
-
         public ICommand ShowCalendarViewCommand { get; }
 
         private List<Students> _student;

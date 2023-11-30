@@ -1,4 +1,6 @@
-﻿using System;
+using NewCall_WPF.Repositories;
+using NewCall_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
@@ -21,7 +23,7 @@ namespace NewCall_WPF.Models.Calendar
             Weeks = new ObservableCollection<WeekInfo>();
         }
 
-        public void GenerateMonth(int year, int month)
+        public async void GenerateMonth(int year, int month)
         {
             Year = year;
             Month = month;
@@ -47,7 +49,15 @@ namespace NewCall_WPF.Models.Calendar
                 {
                     if (currentDay.DayOfWeek != DayOfWeek.Saturday && currentDay.DayOfWeek != DayOfWeek.Sunday && currentDay.Month == month)
                     {
-                        week.SetDayInfo(currentDay.DayOfWeek, new DayInfo { DayNumber = currentDay.Day.ToString() });
+                        DateTime date = new DateTime(currentDay.Year, currentDay.Month, currentDay.Day);
+                        AbsenceRepository absenceRepository = new AbsenceRepository();
+                        var absences = await absenceRepository.GetAbsenceByDate(date);
+                        bool isEnable = false;
+                        if (absences.Count > 0)
+                        {
+                            isEnable = true;
+                        }
+                        week.SetDayInfo(currentDay.DayOfWeek, new DayInfo { DayNumber = currentDay.Day.ToString() , IsEnable = isEnable });
                     }
                     currentDay = currentDay.AddDays(1);
                 }

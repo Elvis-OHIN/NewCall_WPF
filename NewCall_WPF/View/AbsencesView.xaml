@@ -11,7 +11,7 @@
             <RowDefinition Height="30" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Name="btnEnregistrerSelection" Grid.Row="0" Content="Enregistrer Sélection" Click="btnEnregistrerSelection_Click"/>
+        <Button Name="btnEnregistrerSelection" Grid.Row="0" Content="Enregistrer Selection"/>
 
         <ListView HorizontalAlignment="Center" Height="354" Grid.Row="1"  VerticalAlignment="Center" Width="576" Name="StudentList">
             <ListView.View>

@@ -1,6 +1,7 @@
 using NewCall_WPF.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -28,13 +29,15 @@ namespace NewCall_WPF.Repositories
             return validAbsence;
         }
 
-        public async Task<List<Absences>> GetAbsenceByDate(DateTime date)
+        public async Task<List<Students>> GetAbsenceByDate(DateTime date)
         {
-            List<Absences> absence =  new List<Absences>();
+            List<Students> absence =  new List<Students>();
             try
             {
-                var reponse = await client.GetAsync($"http://localhost:5164/api/Absences/Create/{date}");
-                var content = await reponse.Content.ReadAsAsync<List<Absences>>();
+                DateTime parsedDate = DateTime.ParseExact(date.Date.ToString(), "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+                string formattedDate = parsedDate.ToString("yyyy-MM-dd");
+                var reponse = await client.GetAsync($"http://localhost:5164/api/Absences/Date?date={formattedDate}");
+                var content = await reponse.Content.ReadAsAsync<List<Students>>();
                 return content;
             }
             catch {

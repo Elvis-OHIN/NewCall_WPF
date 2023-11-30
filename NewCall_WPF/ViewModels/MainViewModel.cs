@@ -11,11 +11,11 @@ namespace NewCall_WPF.ViewModels
     public class MainViewModel : ViewModelBase
     {
 
+        private static MainViewModel _instance = new MainViewModel();
+        public static MainViewModel Instance => _instance;
         private ViewModelBase _currentChildView;
         private string _caption;
         private IconChar _icon;
-
-    
 
         public ViewModelBase CurrentChildView
         {
@@ -62,15 +62,16 @@ namespace NewCall_WPF.ViewModels
         public ICommand ShowStudentViewCommand { get; }
         public ICommand ShowCalendarViewCommand { get; }
 
-        private static MainViewModel _instance = new MainViewModel();
-        public static MainViewModel Instance => _instance;
+        public ICommand ShowCalendarAbsencesViewCommand { get; }
+
+   
         public MainViewModel()
         {
             //Initialize commands
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowStudentViewCommand = new ViewModelCommand(ExecuteShowStudentViewCommand);
             ShowCalendarViewCommand = new ViewModelCommand(ExecuteShowCalendarViewCommand);
-          
+            ShowCalendarAbsencesViewCommand = new ViewModelCommand(ExecuteShowCalendarAbsencesViewCommand);
             //Default view
             ExecuteShowHomeViewCommand(null);
 
@@ -92,8 +93,17 @@ namespace NewCall_WPF.ViewModels
         private void ExecuteShowCalendarViewCommand(object obj)
         {
             CurrentChildView = new CalendarViewModel();
-            Caption = "Feuille d'appel";
+            CalendarViewModel.Instance.ViewAbsences = false;
+            Caption = "Faire l'appel";
             Icon = IconChar.Newspaper;
+        }
+
+        private void ExecuteShowCalendarAbsencesViewCommand(object obj)
+        {
+            CurrentChildView = new CalendarViewModel();
+            CalendarViewModel.Instance.ViewAbsences = true;
+            Caption = "Liste des absences";
+            Icon = IconChar.UsersSlash;
         }
 
     }

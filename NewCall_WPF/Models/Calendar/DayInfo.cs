@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,7 @@ namespace NewCall_WPF.Models.Calendar
 {
     public class DayInfo
     {
-        public string DayNumber { get; set; } 
+        public string DayNumber { get; set; }
+        public bool IsEnable { get; set; }
     }
 }
