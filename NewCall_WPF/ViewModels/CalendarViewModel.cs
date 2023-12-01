@@ -3,6 +3,7 @@ using HandyControl.Tools.Command;
 using NewCall_WPF.Interfaces;
 using NewCall_WPF.Models;
 using NewCall_WPF.Models.Calendar;
+using NewCall_WPF.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace NewCall_WPF.ViewModels
@@ -83,15 +85,27 @@ namespace NewCall_WPF.ViewModels
         private void ExecuteShowCallViewCommand(object obj)
         {
             var param = obj;
-            CallViewModel.Instance.Day = (int)Convert.ToInt64(param); 
+            CallViewModel.Instance.Day = (int)Convert.ToInt64(param);
+            DateTime date = new DateTime(CurrentMonth.Year, CurrentMonth.Month, (int)Convert.ToInt64(param));
+            MainViewModel.Instance.Caption += $" / Faire l'appel pour le {date.ToString("dd MMMM yyyy")}";
             MainViewModel.Instance.CurrentChildView = new CallViewModel();
         }
 
-        private void ExecuteShowAbsenceViewCommand(object obj)
+        private async void ExecuteShowAbsenceViewCommand(object obj)
         {
             var param = obj;
-            StudentViewModel.Instance.Student = (List<Students>)param;
-            MainViewModel.Instance.CurrentChildView = new StudentViewModel();
+            DateTime date = new DateTime(CurrentMonth.Year, CurrentMonth.Month, (int)Convert.ToInt64(param));
+            AbsenceRepository absenceRepository = new AbsenceRepository();
+            var absences = await absenceRepository.GetAbsenceByDate(date);
+
+            AbsentViewModel.Instance.Student = absences;
+
+            if (absences.Count > 0)
+            {
+                StudentViewModel.Instance.Student = absences;
+                MainViewModel.Instance.Caption += $" / Liste des absents du {date.ToString("dd MMMM yyyy")}";
+                MainViewModel.Instance.CurrentChildView = new AbsentViewModel();
+            }
         }
     }
 }

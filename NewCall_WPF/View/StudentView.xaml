@@ -5,8 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NewCall_WPF.View"
              mc:Ignorable="d" 
+             xmlns:viewModel="clr-namespace:NewCall_WPF.ViewModels"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:StudentViewModel/>
+    </UserControl.DataContext>
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button x:Name="BtnAdd"
+                Cursor="Hand"
+                Content="Ajouter un étudiant"
+                Click="BtnAdd_Click"
+                HorizontalAlignment="Right"/>
+
+        <ListView HorizontalAlignment="Center" Height="354" Grid.Row="1"  VerticalAlignment="Center" Width="576" ItemsSource="{Binding Student}" Name="StudentList">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Firstname" DisplayMemberBinding="{Binding firstname}" Width="120"/>
+                    <GridViewColumn Header="Lastname" DisplayMemberBinding="{Binding lastname}" Width="120"/>
+                    <GridViewColumn Header="Statut" DisplayMemberBinding="{Binding statut}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using NewCall_WPF.Modals;
+using NewCall_WPF.Repositories;
+using NewCall_WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +26,20 @@ namespace NewCall_WPF.View
         public StudentView()
         {
             InitializeComponent();
+            LoadStudents();
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddStudent addStudent= new AddStudent();
+            addStudent.ShowDialog();
+        }
+
+        private async void LoadStudents()
+        {
+            StudentsRepository studentsRepository = new StudentsRepository();
+            StudentViewModel.Instance.Student = await studentsRepository.GetAllStudent();
+            StudentList.ItemsSource = StudentViewModel.Instance.Student;
         }
     }
 }

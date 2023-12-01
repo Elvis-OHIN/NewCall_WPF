@@ -30,11 +30,12 @@ namespace NewCall_WPF.View
         {
             InitializeComponent();
             LoadStudents();
+
         }
 
         private async void LoadStudents()
         {
-            StudentList.ItemsSource = StudentViewModel.Instance.Student;
+            StudentList.ItemsSource = AbsentViewModel.Instance.Student;
         }
     }
 }

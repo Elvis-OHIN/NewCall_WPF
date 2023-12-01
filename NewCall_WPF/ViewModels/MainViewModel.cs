@@ -94,7 +94,7 @@ namespace NewCall_WPF.ViewModels
         {
             CurrentChildView = new CalendarViewModel();
             CalendarViewModel.Instance.ViewAbsences = false;
-            Caption = "Faire l'appel";
+            Caption = "Feuille d'appel";
             Icon = IconChar.Newspaper;
         }
 

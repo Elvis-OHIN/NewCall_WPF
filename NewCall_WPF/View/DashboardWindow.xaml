@@ -12,11 +12,11 @@
     <Window.Resources>
 
         <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-            <local:CalendarView/>
+            <local:HomeView/>
         </DataTemplate>
         
         <DataTemplate DataType="{x:Type viewModel:StudentViewModel}">
-            <local:AbsencesView/>
+            <local:StudentView/>
         </DataTemplate>
 
         <DataTemplate DataType="{x:Type viewModel:CalendarViewModel}">
@@ -25,6 +25,10 @@
 
         <DataTemplate DataType="{x:Type viewModel:CallViewModel}">
             <local:CallView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:AbsentViewModel}">
+            <local:AbsencesView/>
         </DataTemplate>
 
     </Window.Resources>
@@ -73,21 +77,13 @@
                     </StackPanel>
                 </RadioButton>
                 
-                <RadioButton Style="{StaticResource menuButton}"
-                    Tag="{StaticResource color11}"
-                    Command="{Binding ShowCalendarAbsencesViewCommand}">     
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="UsersSlash" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Liste des absences" Style="{StaticResource menuButtonText}"/>
-                    </StackPanel>
-                </RadioButton>
                 
                 <RadioButton Style="{StaticResource menuButton}"
                     Tag="{StaticResource color11}"
                     Command="{Binding ShowCalendarViewCommand}">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Newspaper" Style="{StaticResource menuButtonIcon}"/>
-                        <TextBlock Text="Faire d'appel" Style="{StaticResource menuButtonText}"/>
+                        <TextBlock Text="Feuille d'appel" Style="{StaticResource menuButtonText}"/>
                     </StackPanel>
                 </RadioButton>
                 

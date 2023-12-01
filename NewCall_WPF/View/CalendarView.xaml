@@ -32,7 +32,6 @@
         </StackPanel>
 
         <DataGrid IsReadOnly="True" ItemsSource="{Binding CurrentMonth.Weeks}" Name="CalendarData"
-                  PreviewMouseLeftButtonDown="DataGrid_PreviewMouseLeftButtonDown"
                   Grid.Row="1" AutoGenerateColumns="False"
                   RowHeight="110">
             <DataGrid.Resources>
@@ -45,165 +44,537 @@
                 <DataGridTemplateColumn Header="Lundi" Width="240" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Monday.DayNumber}" HorizontalAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <!-- Élément central -->
+                                <TextBlock Text="{Binding Monday.DayNumber}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Visibility" Value="Visible"/>
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding Monday.IsEnable}" Value="true">
-                                                    <Setter Property="Foreground" Value="Yellow"/>
+                                                    <Setter Property="Foreground" Value="#FFA500"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
+                                <!-- Boutons en bas -->
+                                <Grid Grid.Row="1" Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="L'appel a été passé">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Monday.IsEnable}" Value="true">
-                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
-                            </StackPanel>
+                                    <Button 
+                                            Command="{Binding DataContext.ShowCallViewCommand, 
+                                                    RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                            CommandParameter="{Binding Monday.DayNumber}"
+                                            Grid.Column="0" 
+                                            BorderThickness="0"
+                                            Foreground="White"
+                                            FontSize="12"
+                                            FontFamily="Montserrat"
+                                            Cursor="Hand"
+                                            Margin="5"> 
+                                        <Button.Style>
+                                            <Style TargetType="ContentControl">
+                                                <Setter Property="Content" Value="Faire l'appel"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Monday.IsEnable}" Value="true">
+                                                        <Setter Property="Content" Value="Refaire l'appel"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Monday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                    CornerRadius="20"
+                                                    Background="#FF1976D2" >
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                    <!-- Bouton 2 -->
+                                    <Button Content="Liste des Absents" 
+                                        Command="{Binding DataContext.ShowAbsenceViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding Monday.DayNumber}" 
+                                        Grid.Column="1"
+                                        BorderThickness="0"
+                                        Foreground="White"
+                                        FontSize="11"
+                                        FontFamily="Montserrat"
+                                        Cursor="Hand"
+                                        Margin="5">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Monday.IsEnable}" Value="false">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Monday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                    CornerRadius="20"
+                                                    Background="#FF4CAF50">
+                                                <ContentPresenter VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                                
+                                
+                            </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Mardi" Width="240" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Thursday.DayNumber}" HorizontalAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <!-- Élément central -->
+                                <TextBlock Text="{Binding Tuesday.DayNumber}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Visibility" Value="Visible"/>
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="true">
-                                                    <Setter Property="Foreground" Value="Yellow"/>
+                                                <DataTrigger Binding="{Binding Tuesday.IsEnable}" Value="true">
+                                                    <Setter Property="Foreground" Value="#FFA500"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
+                                <!-- Boutons en bas -->
+                                <Grid Grid.Row="1" Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="L'appel a été passé">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="true">
-                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
-                            </StackPanel>
+                                    <Button 
+                                          Command="{Binding DataContext.ShowCallViewCommand, 
+                                          RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                          CommandParameter="{Binding Monday.DayNumber}"
+                                          Grid.Column="0" 
+                                          BorderThickness="0"
+                                          Foreground="White"
+                                          FontSize="12"
+                                          FontFamily="Montserrat"
+                                          Cursor="Hand"
+                                          Margin="5">
+                                        <Button.Style>
+                                            <Style TargetType="ContentControl">
+                                                <Setter Property="Content" Value="Faire l'appel"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Tuesday.IsEnable}" Value="true">
+                                                        <Setter Property="Content" Value="Refaire l'appel"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Tuesday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                  CornerRadius="20"
+                                                  Background="#FF1976D2" >
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                    <!-- Bouton 2 -->
+                                    <Button Content="Liste des Absents" 
+                                      Command="{Binding DataContext.ShowAbsenceViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                      CommandParameter="{Binding Tuesday.DayNumber}" 
+                                      Grid.Column="1"
+                                      BorderThickness="0"
+                                      Foreground="White"
+                                      FontSize="11"
+                                      FontFamily="Montserrat"
+                                      Cursor="Hand"
+                                      Margin="5">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Tuesday.IsEnable}" Value="false">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Tuesday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                      CornerRadius="20"
+                                                      Background="#FF4CAF50">
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                            </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Mercredi" Width="240" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Wednesday.DayNumber}" HorizontalAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <!-- Élément central -->
+                                <TextBlock Text="{Binding Wednesday.DayNumber}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Visibility" Value="Visible"/>
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Wednesday.IsEnable}" Value="true">
-                                                    <Setter Property="Foreground" Value="Yellow"/>
+                                                <DataTrigger Binding="{Binding Tuesday.IsEnable}" Value="true">
+                                                    <Setter Property="Foreground" Value="#FFA500"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
+                                <!-- Boutons en bas -->
+                                <Grid Grid.Row="1" Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="L'appel a été passé">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Wednesday.IsEnable}" Value="true">
-                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
-                            </StackPanel>
+                                    <Button 
+                                          Command="{Binding DataContext.ShowCallViewCommand, 
+                                          RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                          CommandParameter="{Binding Wednesday.DayNumber}"
+                                          Grid.Column="0" 
+                                          BorderThickness="0"
+                                          Foreground="White"
+                                          FontSize="12"
+                                          FontFamily="Montserrat"
+                                          Cursor="Hand"
+                                          Margin="5">
+                                        <Button.Style>
+                                            <Style TargetType="ContentControl">
+                                                <Setter Property="Content" Value="Faire l'appel"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Wednesday.IsEnable}" Value="true">
+                                                        <Setter Property="Content" Value="Refaire l'appel"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Wednesday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                      CornerRadius="20"
+                                                      Background="#FF1976D2" >
+                                                      <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                    <!-- Bouton 2 -->
+                                    <Button Content="Liste des Absents" 
+                                          Command="{Binding DataContext.ShowAbsenceViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                          CommandParameter="{Binding Wednesday.DayNumber}" 
+                                          Grid.Column="1"
+                                          BorderThickness="0"
+                                          Foreground="White"
+                                          FontSize="11"
+                                          FontFamily="Montserrat"
+                                          Cursor="Hand"
+                                          Margin="5">       
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Wednesday.IsEnable}" Value="false">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Wednesday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                      CornerRadius="20"
+                                                      Background="#FF4CAF50">
+                                                      <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>    
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                            </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Jeudi" Width="240" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Thursday.DayNumber}" HorizontalAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <!-- Élément central -->
+                                <TextBlock Text="{Binding Thursday.DayNumber}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Visibility" Value="Visible"/>
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="true">
-                                                    <Setter Property="Foreground" Value="Yellow"/>
+                                                    <Setter Property="Foreground" Value="#FFA500"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
+                                <!-- Boutons en bas -->
+                                <Grid Grid.Row="1" Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="L'appel a été passé">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="true">
-                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
-                            </StackPanel>
+                                    <Button 
+                                        Command="{Binding DataContext.ShowCallViewCommand, 
+                                        RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding Thursday.DayNumber}"
+                                        Grid.Column="0" 
+                                        BorderThickness="0"
+                                        Foreground="White"
+                                        FontSize="12"
+                                        FontFamily="Montserrat"
+                                        Cursor="Hand"
+                                        Margin="5">
+                                        <Button.Style>
+                                            <Style TargetType="ContentControl">
+                                                <Setter Property="Content" Value="Faire l'appel"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="true">
+                                                        <Setter Property="Content" Value="Refaire l'appel"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                    CornerRadius="20"
+                                                    Background="#FF1976D2" >
+                                                    <ContentPresenter VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center"/>      
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                    <!-- Bouton 2 -->
+                                    <Button Content="Liste des Absents" 
+                                        Command="{Binding DataContext.ShowAbsenceViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        CommandParameter="{Binding Thursday.DayNumber}" 
+                                        Grid.Column="1"
+                                        BorderThickness="0"
+                                        Foreground="White"
+                                        FontSize="11"
+                                        FontFamily="Montserrat"
+                                        Cursor="Hand"
+                                        Margin="5">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="false">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                    CornerRadius="20"
+                                                    Background="#FF4CAF50">
+                                                                    <ContentPresenter VerticalAlignment="Center"
+                                                    HorizontalAlignment="Center"/>      
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                            </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Vendredi" Width="240" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding Friday.DayNumber}" HorizontalAlignment="Center">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <!-- Élément central -->
+                                <TextBlock Text="{Binding Friday.DayNumber}" HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <TextBlock.Style>
                                         <Style TargetType="TextBlock">
                                             <Setter Property="Visibility" Value="Visible"/>
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Friday.IsEnable}" Value="true">
-                                                    <Setter Property="Foreground" Value="Yellow"/>
+                                                <DataTrigger Binding="{Binding Thursday.IsEnable}" Value="true">
+                                                    <Setter Property="Foreground" Value="#FFA500"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
+                                <!-- Boutons en bas -->
+                                <Grid Grid.Row="1" Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="L'appel a été passé">
-                                    <TextBlock.Style>
-                                        <Style TargetType="TextBlock">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Friday.IsEnable}" Value="true">
-                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </TextBlock.Style>
-                                </TextBlock>
-                            </StackPanel>
+                                    <Button 
+                                         Command="{Binding DataContext.ShowCallViewCommand, 
+                                         RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                         CommandParameter="{Binding Friday.DayNumber}"
+                                         Grid.Column="0" 
+                                         BorderThickness="0"
+                                         Foreground="White"
+                                         FontSize="12"
+                                         FontFamily="Montserrat"
+                                         Cursor="Hand"
+                                         Margin="5">
+                                        <Button.Style>
+                                            <Style TargetType="ContentControl">
+                                                <Setter Property="Content" Value="Faire l'appel"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Friday.IsEnable}" Value="true">
+                                                        <Setter Property="Content" Value="Refaire l'appel"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Friday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                     CornerRadius="20"
+                                                     Background="#FF1976D2" >
+                                                                    <ContentPresenter VerticalAlignment="Center"
+                                                     HorizontalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                    <!-- Bouton 2 -->
+                                    <Button Content="Liste des Absents" 
+                                         Command="{Binding DataContext.ShowAbsenceViewCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                         CommandParameter="{Binding Friday.DayNumber}" 
+                                         Grid.Column="1"
+                                         BorderThickness="0"
+                                         Foreground="White"
+                                         FontSize="11"
+                                         FontFamily="Montserrat"
+                                         Cursor="Hand"
+                                         Margin="5">    
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Friday.IsEnable}" Value="false">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Friday.IsEnable}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Hidden"/>
+                                                        <Setter Property="IsEnabled" Value="False"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border  Height="30"
+                                                     CornerRadius="20"
+                                                     Background="#FF4CAF50">
+                                                                <ContentPresenter VerticalAlignment="Center"
+                                                     HorizontalAlignment="Center"/> 
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </Grid>
+                            </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

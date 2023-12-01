@@ -106,3 +106,5 @@ D:\niho\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\CallView.baml
 D:\niho\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\HomeView.baml
 D:\niho\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\LoginWindow.baml
 D:\niho\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\View\StudentView.baml
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\Modals\AddStudent.g.cs
+C:\Users\Elvis\source\repos\NewCall_WPF\NewCall_WPF\obj\Debug\net7.0-windows\Modals\AddStudent.baml

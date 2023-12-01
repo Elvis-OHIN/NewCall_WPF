@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\dashboard-de-demain-Data-visualisation-et-storytelling.jpg" />
+    <None Remove="Assets\dashboard-modern.png" />
     <None Remove="Assets\Login\key-icon.png" />
     <None Remove="Assets\Login\user-icon.png" />
     <None Remove="Assets\logo.jpg" />
@@ -20,6 +22,7 @@
     <None Remove="logo_Image Enhancer.png" />
     <None Remove="logo_newCall.png" />
     <None Remove="NewCall.png" />
+    <None Remove="View\dashboard-modern.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +42,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\dashboard-de-demain-Data-visualisation-et-storytelling.jpg" />
+    <Resource Include="Assets\dashboard-modern.png" />
     <Resource Include="DALL·E 2023-11-08 22.11.29 - Design a logo for 'NewCall' that includes a stylized book icon, symbolizing knowledge and information. The primary color of the logo should be #FFA500.png" />
     <Resource Include="login.png" />
     <Resource Include="login_window.png" />
@@ -47,6 +52,7 @@
     <Resource Include="logo_Image Enhancer.png" />
     <Resource Include="logo_newCall.png" />
     <Resource Include="NewCall.png" />
+    <Resource Include="View\dashboard-modern.png" />
   </ItemGroup>
 
   <ItemGroup>
